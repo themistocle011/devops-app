@@ -4,6 +4,10 @@ import time
 from flask import Flask, Response, g, jsonify, request
 from prometheus_client import (CONTENT_TYPE_LATEST, Counter, Histogram,
                                generate_latest)
+from prometheus_flask_exporter import PrometheusMetrics
+
+app = Flask(__name__)
+metrics = PrometheusMetrics(app)
 
 app = Flask(__name__)
 
